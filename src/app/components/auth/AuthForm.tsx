@@ -64,9 +64,7 @@ const AuthForm = () => {
                 className="w-full px-4 py-2 border rounded-md"
               />
               {/* Use type assertion here */}
-              {errors.firstName && (
-                <p className="text-sm text-red-500">{(errors as any).firstName?.message}</p>
-              )}
+             
             </div>
             <div>
               <label className="block mb-1 text-sm font-medium">Nama Belakang</label>
@@ -76,9 +74,6 @@ const AuthForm = () => {
                 className="w-full px-4 py-2 border rounded-md"
               />
               {/* Use type assertion here */}
-              {errors.lastName && (
-                <p className="text-sm text-red-500">{(errors as any).lastName?.message}</p>
-              )}
             </div>
             <div>
               <label className="block mb-1 text-sm font-medium">No. Telepon</label>
@@ -88,9 +83,6 @@ const AuthForm = () => {
                 className="w-full px-4 py-2 border rounded-md"
               />
               {/* Use type assertion here */}
-              {errors.phone && (
-                <p className="text-sm text-red-500">{(errors as any).phone?.message}</p>
-              )}
             </div>
           </>
         )}
