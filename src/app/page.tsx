@@ -5,6 +5,15 @@ import { useState, useEffect } from 'react';
 import { Button } from './components/ui/Button';
 import { Card, CardContent } from './components/ui/Card';
 
+declare global {
+  interface Window {
+    AOS: {
+      init: (options?: { duration: number }) => void;
+      refresh: () => void;
+    };
+  }
+}
+
 export default function Home() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
