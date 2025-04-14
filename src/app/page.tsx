@@ -224,7 +224,7 @@ export default function Home() {
               height={60}
               className="rounded-full mx-auto mb-4"
             />
-            <p className="text-sm text-gray-500">"Platform ini sangat membantu dalam mengelola keuangan bisnis kami. Sangat mudah digunakan!"</p>
+            <p className="text-sm text-gray-500">Platform ini sangat membantu dalam mengelola keuangan bisnis kami. Sangat mudah digunakan!</p>
             <div className="font-medium mt-4">Rina - Pengusaha</div>
           </div>
           <div className="bg-white text-black p-6 rounded-lg shadow-lg w-72">
@@ -235,7 +235,7 @@ export default function Home() {
               height={60}
               className="rounded-full mx-auto mb-4"
             />
-            <p className="text-sm text-gray-500">"Sangat puas dengan fitur analisis keuangan, memudahkan saya merencanakan keuangan pribadi."</p>
+            <p className="text-sm text-gray-500">Sangat puas dengan fitur analisis keuangan, memudahkan saya merencanakan keuangan pribadi.</p>
             <div className="font-medium mt-4">Andi - Freelancer</div>
           </div>
         </div>

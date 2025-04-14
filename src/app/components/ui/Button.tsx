@@ -1,4 +1,3 @@
-// import { cn } from '../../lib/utils';
 import React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +16,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        className={base, variants[variant], className}
+        className={`${base} ${variants[variant]} ${className}`} // Menggunakan template literals
         ref={ref}
         {...props}
       />
