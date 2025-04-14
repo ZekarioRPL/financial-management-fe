@@ -43,7 +43,7 @@ const AuthForm = () => {
     resolver: zodResolver(mode === 'login' ? loginSchema : registerSchema),
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: LoginFormData | RegisterFormData) => {
     console.log('Form Data:', data);
     router.push('/dashboard');
   };
