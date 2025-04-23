@@ -98,20 +98,21 @@ const AuthForm = () => {
         </div>
 
         <div>
-          <label className="block mb-1 text-sm font-medium">Kata Sandi</label>
+          <label className="block mb-1 text-sm font-medium">Kata Sandi </label>
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
               {...register('password')}
               className="w-full px-4 py-2 border rounded-md"
             />
-            <button
-              type="button"
-              className="absolute right-3 top-2 text-sm text-blue-500"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? 'Sembunyikan' : 'Tampilkan'}
-            </button>
+          <button
+            type="button"
+            className="absolute right-3 top-2 text-sm text-blue-500"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            <i className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+          </button>
+
           </div>
           {errors.password && <p className="text-sm text-red-500">{errors.password.message}</p>}
         </div>
