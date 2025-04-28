@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -15,7 +16,6 @@ declare global {
 }
 
 export default function Home() {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -43,13 +43,12 @@ export default function Home() {
     <main className="min-h-screen bg-[#F8F8F8] text-black font-poppins">
 
       {/* Header */}
-      <header className="flex justify-between items-center px-10 py-6 bg-white shadow-lg fixed w-full z-10 top-0">
+      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-lg fixed w-full z-10 top-0">
         <div className="font-bold text-2xl text-[#23005B]">DompetSehat</div>
 
         {/* Tombol Hamburger di mobile */}
         <div className="lg:hidden" onClick={toggleMenu}>
           <button className="text-2xl focus:outline-none">
-            {/* Ikon berubah antara garis dan silang */}
             <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
         </div>
@@ -83,15 +82,15 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="flex flex-col md:flex-row items-center justify-center px-10 py-32 md:py-64 bg-gradient-to-b from-[#23005B] to-[#5A1E9A] text-white" data-aos="fade-up">
+      <section id="home" className="flex flex-col md:flex-row items-center justify-center px-6 py-32 md:py-64 bg-gradient-to-b from-[#23005B] to-[#5A1E9A] text-white" data-aos="fade-up">
         <div className="text-center md:text-left md:w-1/2">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Kelola Keuanganmu dengan Mudah dan Cerdas</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Kelola Keuanganmu dengan Mudah dan Cerdas</h1>
           <p className="text-lg mb-6">Platform manajemen keuangan yang membantu individu dan bisnis mengelola keuangan dengan lebih efisien dan transparan.</p>
           <Button className="bg-[#FF6A3D] text-white px-8 py-3 rounded-full hover:bg-[#FF4F2D] transition-all">Mulai Sekarang</Button>
         </div>
         <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
           <Image
-            src="https://undraw.co/api/illustrations/finance.svg"
+            src="/images/dashboard.png"
             alt="Finance Illustration"
             width={600}
             height={600}
@@ -100,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* Mengapa Memilih DompetSehat? */}
-      <section id="features" className="py-24 px-10 bg-white text-black" data-aos="fade-up">
+      <section id="features" className="py-24 px-6 md:px-10 bg-white text-black" data-aos="fade-up">
         <h2 className="text-3xl font-bold text-center mb-12">Mengapa Memilih DompetSehat?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="flex flex-col md:flex-row items-center justify-center md:gap-10" data-aos="fade-up">
@@ -110,8 +109,8 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
               <Image
-                src="https://undraw.co/api/illustrations/secure_data.svg"
-                alt="Keamanan Data"
+                src="/images/security.png"
+                alt='securiy'
                 width={500}
                 height={400}
               />
@@ -124,8 +123,8 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
               <Image
-                src="https://undraw.co/api/illustrations/cloud_storage.svg"
-                alt="Cloud Storage"
+                src="/images/cloud-storage.png"
+                alt='cloud'
                 width={500}
                 height={400}
               />
@@ -138,7 +137,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
               <Image
-                src="https://undraw.co/api/illustrations/accessible.svg"
+                src="/images/acess-anywhere.png"
                 alt="Akses di Mana Saja"
                 width={500}
                 height={400}
@@ -152,7 +151,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
               <Image
-                src="https://undraw.co/api/illustrations/multiple_users.svg"
+                src="/images/multi-user.png"
                 alt="Multi User"
                 width={500}
                 height={400}
@@ -163,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-white text-black py-20 px-10" data-aos="fade-up">
+      <section id="about" className="bg-white text-black py-20 px-6 md:px-10" data-aos="fade-up">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
           <div className="text-center md:text-left">
             <h3 className="text-sm text-[#FF6A3D] mb-2">ABOUT</h3>
@@ -174,7 +173,7 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="https://undraw.co/api/illustrations/people-working.svg"
+              src="/images/laptop.png"
               alt="People Working"
               width={600}
               height={400}
@@ -184,13 +183,13 @@ export default function Home() {
       </section>
 
       {/* Developer Section */}
-      <section id="developer" className="py-20 px-10 text-center bg-gradient-to-b from-white to-[#e6f4f1] text-black" data-aos="fade-up">
+      <section id="developer" className="py-20 px-6 md:px-10 text-center bg-gradient-to-b from-white to-[#e6f4f1] text-black" data-aos="fade-up">
         <h2 className="text-xl font-semibold mb-6">Developer</h2>
         <div className="flex overflow-x-auto space-x-6">
           <Card className="max-w-xs mx-2">
             <CardContent className="p-6">
               <Image
-                src="/images/profile-placeholder.png"
+                src="/images/avatar.jpg"
                 alt="Profile"
                 width={60}
                 height={60}
@@ -207,7 +206,7 @@ export default function Home() {
           <Card className="max-w-xs mx-2">
             <CardContent className="p-6">
               <Image
-                src="/images/profile-placeholder.png"
+                src="/images/avatar.jpg"
                 alt="Profile"
                 width={60}
                 height={60}
@@ -220,17 +219,33 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
+          <Card className="max-w-xs mx-2">
+            <CardContent className="p-6">
+              <Image
+                src="/images/avatar.jpg"
+                alt="Profile"
+                width={60}
+                height={60}
+                className="rounded-full mx-auto mb-4"
+              />
+              <div className="font-medium">Rengga</div>
+              <div className="text-sm text-gray-500">Developer</div>
+              <p className="text-sm mt-4">
+                “Kami bekerja keras untuk memastikan Dompet Sehat memberikan pengalaman terbaik dan membantu memudahkan manajemen keuangan.”
+              </p>
+            </CardContent>
+          </Card>
 
         </div>
       </section>
 
       {/* Testimoni Section */}
-      <section id="testimonials" className="bg-[#23005B] text-white py-24 px-10 text-center" data-aos="fade-up">
+      <section id="testimonials" className="bg-[#23005B] text-white py-24 px-6 md:px-10 text-center" data-aos="fade-up">
         <h2 className="text-3xl font-bold mb-12">Apa Kata Pengguna Kami</h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
           <div className="bg-white text-black p-6 rounded-lg shadow-lg w-72">
             <Image
-              src="/images/profile-placeholder.png"
+              src="/images/avatar.jpg"
               alt="User 1"
               width={60}
               height={60}
@@ -241,7 +256,7 @@ export default function Home() {
           </div>
           <div className="bg-white text-black p-6 rounded-lg shadow-lg w-72">
             <Image
-              src="/images/profile-placeholder.png"
+              src="/images/avatar.jpg"
               alt="User 2"
               width={60}
               height={60}
@@ -254,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#23005B] text-white text-xs px-10 py-8">
+      <footer className="bg-[#23005B] text-white text-xs px-6 py-8">
         <div className="flex justify-between items-center">
           <div>
             <div className="font-semibold">DompetSehat</div>
