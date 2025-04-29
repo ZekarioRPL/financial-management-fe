@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 type Collaboration = {
@@ -5,6 +6,7 @@ type Collaboration = {
   desc: string;
   status: string;
   anggota: number;
+  href: string;
 };
 
 interface SidebarProps {
@@ -60,15 +62,24 @@ export const Sidebar = ({
 
         <div className="space-y-2">
           {collaborations.map((item) => (
-            <Button
+            // <Button
+            //   key={item.title}
+            //   variant="ghost"
+            //   className="w-full text-left py-3 px-3 border-1 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
+            // >
+            //   <span className="text-right text-gray-800">
+            //     <i className="fas fa-user"></i> {!collapsed && item.title}
+            //   </span>
+            // </Button>
+            <Link
+              href={`/collaborations/${item.href}`} // Ganti sesuai kebutuhan
               key={item.title}
-              variant="ghost"
-              className="w-full text-left py-3 px-3 border-1 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
+              className="w-full block text-left py-3 px-3 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
             >
               <span className="text-right text-gray-800">
                 <i className="fas fa-user"></i> {!collapsed && item.title}
               </span>
-            </Button>
+            </Link>
           ))}
         </div>
       </nav>
