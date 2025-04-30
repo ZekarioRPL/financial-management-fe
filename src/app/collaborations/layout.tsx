@@ -51,17 +51,8 @@ export default function CollaborationsLayout({ children }: CollaborationsLayoutP
       handleLogout={handleLogout}
       setShowDialog={setShowDialog}
     >
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder="Cari kolaborasi..."
-          className="w-full pl-10 pr-4 py-2 rounded border bg-white text-sm"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <i className="fas fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-      </div>
-
+      
+      
       {/* Children here will be [[...id]]/page.tsx */}
       {children}
 
