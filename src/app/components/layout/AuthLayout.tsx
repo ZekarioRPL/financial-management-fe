@@ -14,7 +14,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
         {/* Left: Ilustrasi */}
         <div className="flex items-center justify-center bg-blue-50 p-6">
           <Image
-            src="/images/login-illustration.png"
+            src="/images/picture1.png"
             alt="Ilustrasi Login"
             width={400}
             height={400}

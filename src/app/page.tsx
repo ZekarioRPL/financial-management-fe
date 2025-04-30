@@ -59,8 +59,11 @@ export default function Home() {
           <a href="#features" className="text-gray-700 hover:text-[#FF6A3D] transition-all my-auto">Fitur</a>
           <a href="#about" className="text-gray-700 hover:text-[#FF6A3D] transition-all my-auto">Tentang</a>
           <a href="#testimonials" className="text-gray-700 hover:text-[#FF6A3D] transition-all my-auto">Testimoni</a>
-          <Button variant="ghost" className="text-[#23005B] hover:text-[#FF6A3D]">Login</Button>
-          <Button className="bg-[#FF6A3D] text-white px-6 py-2 rounded-full hover:bg-[#FF4F2D] transition-all">Daftar</Button>
+          {/* <Button variant="ghost" className="text-[#23005B] hover:text-[#FF6A3D]">Login</Button> */}
+          {/* <Button href="/login" className="bg-[#FF6A3D] text-white px-6 py-2 rounded-full hover:bg-[#FF4F2D] transition-all">Login</Button>
+          <Button href="/register" className="bg-[#FF6A3D] text-white px-6 py-2 rounded-full hover:bg-[#FF4F2D] transition-all">Daftar</Button> */}
+          <a href="/register" className="bg-[#FF6A3D] text-white px-6 py-2 rounded-full hover:bg-[#FF4F2D] transition-all">Daftar</a>
+          <a href="/login" className="bg-[#FF6A3D] text-white px-6 py-2 rounded-full hover:bg-[#FF4F2D] transition-all">Login</a>
         </nav>
 
         {/* Dropdown Menu untuk mobile */}

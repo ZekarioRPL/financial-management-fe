@@ -6,6 +6,7 @@ type Collaboration = {
   desc: string;
   status: string;
   anggota: number;
+  href: string;
 };
 
 interface DashboardLayoutProps {

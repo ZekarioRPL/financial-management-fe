@@ -1,10 +1,13 @@
+import Link from 'next/link';
 import { Button } from '../ui/Button';
+import { usePathname } from 'next/navigation';
 
 type Collaboration = {
   title: string;
   desc: string;
   status: string;
   anggota: number;
+  href: string;
 };
 
 interface SidebarProps {
@@ -26,6 +29,8 @@ export const Sidebar = ({
   handleLogout,
   setShowDialog,
 }: SidebarProps) => {
+  const pathname = usePathname();
+
   return (
     <div
       className={`${
@@ -44,9 +49,9 @@ export const Sidebar = ({
           variant="ghost"
           className="w-full text-left py-3 px-3 border-1 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
         >
-          <span className="text-right text-gray-800">
+          <Link href="/dashboard" className="text-right text-gray-800">
             <i className="fas fa-home"></i> {!collapsed && 'Beranda'}
-          </span>
+          </Link>
         </Button>
 
         <div className="flex justify-between items-center">
@@ -60,15 +65,25 @@ export const Sidebar = ({
 
         <div className="space-y-2">
           {collaborations.map((item) => (
-            <Button
+            // <Button
+            //   key={item.title}
+            //   variant="ghost"
+            //   className="w-full text-left py-3 px-3 border-1 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
+            // >
+            //   <span className="text-right text-gray-800">
+            //     <i className="fas fa-user"></i> {!collapsed && item.title}
+            //   </span>
+            // </Button>
+            <Link
+              href={`/collaborations/${item.href}`}
               key={item.title}
-              variant="ghost"
-              className="w-full text-left py-3 px-3 border-1 border-gray-300 hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent transition-all duration-300"
+              className={`w-full block text-left py-3 px-3 border-gray-300 transition-all duration-300 
+                ${(pathname == `/collaborations/${item.href}`) ? 'bg-[#bdddf5] text-[#0C7FDA] border-transparent' : 'hover:bg-[#E9F5FE] hover:text-[#0C7FDA] hover:border-transparent'}`}
             >
               <span className="text-right text-gray-800">
                 <i className="fas fa-user"></i> {!collapsed && item.title}
               </span>
-            </Button>
+            </Link>
           ))}
         </div>
       </nav>
