@@ -25,38 +25,34 @@ export default function FinancialStatements() {
     },
   ];
 
-  const budgets = [
+  const bills = [
     {
-      category: "Keluarga 1",
-      desc: "Keluarga Agus 1",
-      amount: "Rp. 1.000.000",
-      start_date: "01-01-2023",
-      end_date: "31-12-2023",
-      status: "Active",
+      category: "kategori 1",
+      desc: "kategori desc 1",
+      amount: "1000000",
+      duedate: "01-01-2023",
+      status: "pay",
     },
     {
-      category: "Keluarga 2",
-      desc: "Keluarga Agus 2",
-      amount: "Rp. 2.000.000",
-      start_date: "01-01-2023",
-      end_date: "31-12-2023",
-      status: "Non - Active",
+      category: "kategori 2",
+      desc: "kategori desc 2",
+      amount: "30000",
+      duedate: "01-01-2023",
+      status: "pay",
     },
     {
-      category: "Keluarga 3",
-      desc: "Keluarga Agus 3",
-      amount: "Rp. 3.000.000",
-      start_date: "01-01-2023",
-      end_date: "31-12-2023",
-      status: "Active",
+      category: "kategori 3",
+      desc: "kategori desc 3",
+      amount: "30000",
+      duedate: "01-01-2023",
+      status: "pay",
     },
     {
-      category: "Keluarga 4",
-      desc: "Keluarga Agus 4",
-      amount: "Rp. 4.000.000",
-      start_date: "01-01-2023",
-      end_date: "31-12-2023",
-      status: "Non - Active",
+      category: "kategori 4",
+      desc: "kategori desc 4",
+      amount: "30000",
+      duedate: "01-01-2023",
+      status: "pay",
     },
   ]
 
@@ -115,37 +111,58 @@ export default function FinancialStatements() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">Budgets</h2>
+          <h2 className="text-xl font-semibold text-gray-900">Bills</h2>
           <p className="text-sm text-gray-600">
-            List Budgets
+            List Bills
           </p>
         </div>
-        <Link href={`/collaborations/${id}/budget/create`} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm">
-          Add Budget
+        <Link href={`/collaborations/${id}/bills/create`} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm">
+          Add Bill
         </Link>
       </div>
 
+
+      <div className="bg-white border border-gray-200 rounded shadow p-2 mb-2">
+        <h2 className="text-xl font-semibold text-gray-900 border-b-2 border-gray-900 mb-2">Remaining Bills</h2>
+        <div className="flex justify-between">
+          <p>Balance</p>
+          <p>3,2000.000</p>
+        </div>
+        <div className="flex justify-between">
+          <p>This Periode</p>
+          <p>200,000</p>
+        </div>
+      </div>
+
+
       {/* Table */}
       <div className="overflow-x-auto bg-white border border-gray-200 rounded shadow">
+        <h2 className="text-xl my-2 px-4 border-b-2">This Periode</h2>
         <table className="min-w-full divide-y divide-gray-200 text-sm">
           <thead className="bg-gray-50 text-left text-gray-600 font-semibold">
             <tr>
               <th className="px-6 py-3">Category</th>
-              <th className="px-6 py-3">Date</th>
               <th className="px-6 py-3">Desc</th>
+              <th className="px-6 py-3">Payment Date</th>
               <th className="px-6 py-3">Amount</th>
               <th className="px-6 py-3 text-right">Action</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 text-gray-800">
-            {budgets.map((budget, idx) => (
+            {bills.map((bill, idx) => (
               <tr key={idx}>
-                <td className="px-6 py-4 whitespace-nowrap">{budget.category}</td>
-                <td className="px-6 py-4">{budget.start_date + ' - ' + budget.end_date}</td>
-                <td className="px-6 py-4">{budget.desc}</td>
-                <td className="px-6 py-4">{budget.amount}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{bill.category}</td>
+                <td className="px-6 py-4">{bill.desc}</td>
+                <td className="px-6 py-4">
+                  <div className="text-red-500">Due in 4 days</div>
+                </td>
+                <td className="px-6 py-4">
+                  <button className='bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm'>
+                    PAY {bill.amount}
+                  </button>
+                </td>
                 <td className="px-6 py-4 text-right">
-                  <a href={`/collaborations/${id}/budget/edit/100`} className="text-indigo-600 hover:underline text-sm">
+                  <a href={`/collaborations/${id}/bills/edit/100`} className="text-indigo-600 hover:underline text-sm">
                     Edit
                   </a>
                 </td>
