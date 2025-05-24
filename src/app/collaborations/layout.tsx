@@ -51,8 +51,6 @@ export default function CollaborationsLayout({ children }: CollaborationsLayoutP
       handleLogout={handleLogout}
       setShowDialog={setShowDialog}
     >
-      
-      
       {/* Children here will be [[...id]]/page.tsx */}
       {children}
 

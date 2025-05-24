@@ -33,9 +33,8 @@ export const Sidebar = ({
 
   return (
     <div
-      className={`${
-        collapsed ? 'w-16' : 'w-64'
-      } bg-white border-r transition-all duration-300 flex flex-col md:w-64`}
+      className={`${collapsed ? 'w-16' : 'w-64'
+        } bg-white border-r transition-all duration-300 flex flex-col md:w-64`}
     >
       <div className="flex justify-between p-4 border-b">
         <span className={`text-xl font-bold ${collapsed ? 'hidden' : 'block'}`}>DompetSehat</span>
